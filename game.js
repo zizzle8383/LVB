@@ -105,10 +105,10 @@ function updateGameArea() {
   secondcanvas.clear();
   oldx = myBackground.x;
   oldy = myBackground.y;
-  if (myGameArea.keys && myGameArea.keys[37] || myGameArea.keys && myGameArea.keys[65]) {myBackground.x += 2.5; myForeground.x += 2.5;myGamePiece.image.src ="Llama-Left.png"}
-  if (myGameArea.keys && myGameArea.keys[39] || myGameArea.keys && myGameArea.keys[68]) {myBackground.x -= 2.5; myForeground.x -= 2.5; myGamePiece.image.src ="Llama-Right.png"}
-  if (myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[87]) {myBackground.y += 2.5; myForeground.y += 2.5; myGamePiece.image.src ="Llama_Up.png"}
-  if (myGameArea.keys && myGameArea.keys[40] || myGameArea.keys && myGameArea.keys[83]) {myBackground.y -= 2.5; myForeground.y -= 2.5; myGamePiece.image.src ="Llama_Down.png"}
+  if (myGameArea.keys && myGameArea.keys[37] || myGameArea.keys && myGameArea.keys[65]) {myBackground.x += 2.5; myForeground.x += 2.5; myHitDetect.x += 2.5; myGamePiece.image.src ="Llama-Left.png"}
+  if (myGameArea.keys && myGameArea.keys[39] || myGameArea.keys && myGameArea.keys[68]) {myBackground.x -= 2.5; myForeground.x -= 2.5; myHitDetect.x -= 2.5; myGamePiece.image.src ="Llama-Right.png"}
+  if (myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[87]) {myBackground.y += 2.5; myForeground.y += 2.5; myHitDetect.y += 2.5; myGamePiece.image.src ="Llama_Up.png"}
+  if (myGameArea.keys && myGameArea.keys[40] || myGameArea.keys && myGameArea.keys[83]) {myBackground.y -= 2.5; myForeground.y -= 2.5; myHitDetect.y -= 2.5; myGamePiece.image.src ="Llama_Down.png"}
   myBackground.update();
   myGamePiece.update();
   myForeground.update();
