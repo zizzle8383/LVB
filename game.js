@@ -114,7 +114,17 @@ function updateGameArea() {
   myForeground.update();
   myHitDetect.update();
   let imageData = ctx2.getImageData(myGamePiece.x, myGamePiece.y, myGamePiece.width, myGamePiece.height).data;
-  console.log(""+imageData+"")
+    for(var i=0;i<imagedata.length;i+=4){
+            if(
+                imagedata[i+0]==195&&
+                imagedata[i+1]==255&&
+                imagedata[i+2]==0
+            ){
+                return (myBackground.y = oldy; myForeground.y = oldy ; myHitDetect.y - oldy; myBackground.x = oldx; myForeground.x = oldx; myHitDetect.x - oldx;);
+            }
+        }
+        return false;
+    }
   
 }
 window.onload = startGame;
