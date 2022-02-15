@@ -120,7 +120,7 @@ function updateGameArea() {
                 imagedata[i+1]==255&&
                 imagedata[i+2]==0
             ){
-                myBackground.y = oldy; myForeground.y = oldy ; myHitDetect.y - oldy; myBackground.x = oldx; myForeground.x = oldx; myHitDetect.x = oldx;
+                myBackground.y = oldy; myForeground.y = oldy; myHitDetect.y = oldy; myBackground.x = oldx; myForeground.x = oldx; myHitDetect.x = oldx;
                 return true;
             }
         }
