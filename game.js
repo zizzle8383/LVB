@@ -127,7 +127,7 @@ function updateGameArea() {
         return false;
     }
   
-}
+
 window.onload = startGame;
 
 
