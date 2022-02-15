@@ -113,7 +113,7 @@ function updateGameArea() {
   myGamePiece.update();
   myForeground.update();
   myHitDetect.update();
-  let imageData = ctx2.getImageData(myGamePiece.x, myGamePiece.y, myGamePiece.width, myGamePiece.height).data;
+  let imagedata = ctx2.getImageData(myGamePiece.x, myGamePiece.y, myGamePiece.width, myGamePiece.height).data;
     for(var i=0;i<imagedata.length;i+=4){
             if(
                 imagedata[i+0]==195&&
