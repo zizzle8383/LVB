@@ -23,7 +23,7 @@ function create(){
   myBackground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"background.png",0,0,"image");
   myGamePiece = new component(50, 50, "Llama_Down.png", myGameArea.canvas.width/2, myGameArea.canvas.height/2, "image");
   myForeground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"foreground.png",0,0,"image");
-  myBackground = new Scomp(myGameArea.canvas.width, myGameArea.canvas.height,"background.png",0,0,"image");
+  myHitDetect = new Scomp(myGameArea.canvas.width, myGameArea.canvas.height,"background.png",0,0,"image");
 }
 
 var myGameArea = {
@@ -102,6 +102,7 @@ function Scomp(width, height, color, x, y, type) {
 
 function updateGameArea() {
   myGameArea.clear();
+  secondcanvas.clear();
   oldx = myBackground.x;
   oldy = myBackground.y;
   if (myGameArea.keys && myGameArea.keys[37] || myGameArea.keys && myGameArea.keys[65]) {myBackground.x += 2.5; myForeground.x += 2.5;myGamePiece.image.src ="Llama-Left.png"}
@@ -111,6 +112,7 @@ function updateGameArea() {
   myBackground.update();
   myGamePiece.update();
   myForeground.update();
+  myHitDetect.update();
   let imageData = ctx2.getImageData(myGamePiece.x, myGamePiece.y, myGamePiece.width, myGamePiece.height);
   console.log(""+imageData+"")
   
