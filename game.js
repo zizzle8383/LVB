@@ -23,7 +23,7 @@ function create(){
   myBackground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"background.png",0,0,"image");
   myGamePiece = new component(50, 50, "Llama_Down.png", myGameArea.canvas.width/2, myGameArea.canvas.height/2, "image");
   myForeground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"foreground.png",0,0,"image");
-  myHitDetect = new Scomp(myGameArea.canvas.width, myGameArea.canvas.height,"background.png",0,0,"image");
+  myHitDetect = new Scomp(myGameArea.canvas.width, myGameArea.canvas.height,"hitdet.png",0,0,"image");
 }
 
 var myGameArea = {
