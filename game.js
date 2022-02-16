@@ -2,8 +2,8 @@ var myGamePiece;
 var secondcanvas = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 480;
-        this.canvas.height = 270;
+        this.canvas.width = 960;
+        this.canvas.height = 540;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     },
@@ -21,7 +21,7 @@ function startGame() {
 
 function create(){
   myBackground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"background.png",0,0,"image");
-  myGamePiece = new component(10*myGameArea.canvas.width/10, 2*myGameArea.canvas.height/10, "Llama_Down.png", 480/2, 270/2, "image");
+  myGamePiece = new component(50, 50, "Llama_Down.png", 480/2, 270/2, "image");
   myForeground = new component(480, 270,"foreground.png",0,0,"image");
   myHitDetect = new Scomp(480, 270,"Hitdet.png",0,0,"image");
 }
@@ -29,8 +29,8 @@ function create(){
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 480;
-        this.canvas.height = 270;
+        this.canvas.width = 960;
+        this.canvas.height = 540;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
