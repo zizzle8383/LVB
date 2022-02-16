@@ -21,7 +21,7 @@ function startGame() {
 
 function create(){
   myBackground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"background.png",0,0,"image");
-  myGamePiece = new component(50, 50, "Llama_Down.png", 480/2, 270/2, "image");
+  myGamePiece = new component(10*myGameArea.canvas.width/10, 2*myGameArea.canvas.height/10, "Llama_Down.png", 480/2, 270/2, "image");
   myForeground = new component(480, 270,"foreground.png",0,0,"image");
   myHitDetect = new Scomp(480, 270,"Hitdet.png",0,0,"image");
 }
