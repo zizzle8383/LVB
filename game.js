@@ -120,7 +120,7 @@ function moveBackgrounds(xy,move){
     }
 }
 
-function MoveForegrounds(xy,move){
+function moveForegrounds(xy,move){
     if (xy == "x"){
       FG01.x += move;   
     }else if(xy=="y"){
@@ -129,7 +129,7 @@ function MoveForegrounds(xy,move){
 }
 
 
-function MoveHitDetect(xy,move){
+function moveHitDetect(xy,move){
     if (xy == "x"){
       HD01.x += move;   
     }else if(xy=="y"){
