@@ -18,12 +18,23 @@ function startGame() {
     create();
 }
 
+function createbackgrounds(){
+    BG01 = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/background.png",0,0,"image");
+}
+
+function createforegrounds(){
+  FG01 = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/foreground.png",0,0,"image");    
+}
+
+function createdetection(){
+  HD01 = new Scomp(secondcanvas.canvas.width, secondcanvas.canvas.height,"areas/area1/Hitdet (1).png",0,0,"image");
+}
 
 function create(){
-  myBackground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/background.png",0,0,"image");
+  createbackgrounds();
   myGamePiece = new component(100, 100, "Llama_Down.png", myGameArea.canvas.width/2, myGameArea.canvas.height/2, "image");
-  myForeground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/foreground.png",0,0,"image");
-  myHitDetect = new Scomp(secondcanvas.canvas.width, secondcanvas.canvas.height,"areas/area1/Hitdet.png",0,0,"image");
+  createforegrounds();
+  createdetection();
 }
 
 var myGameArea = {
@@ -100,19 +111,55 @@ function Scomp(width, height, color, x, y, type) {
 
 }
 
+
+function moveBackgrounds(xy,move){
+    if (xy == "x"){
+      BG01.x += move;   
+    }else if(xy=="y"){
+      BG01.y += move;
+    }
+}
+
+function MoveForegrounds(xy,move){
+    if (xy == "x"){
+      FG01.x += move;   
+    }else if(xy=="y"){
+      FG01.y += move;
+    }
+}
+
+
+function MoveHitDetect(xy,move){
+    if (xy == "x"){
+      HD01.x += move;   
+    }else if(xy=="y"){
+      HD01.y += move;
+    }
+}    
+
+function updateBackgrounds(){
+ BG01.update();
+}
+function updateForegrounds(){
+ FG01.update();   
+}
+function updateHitDetect(){
+ HD01.update();
+}
+
 function updateGameArea() {
   myGameArea.clear();
   secondcanvas.clear();
-  oldx = myBackground.x;
-  oldy = myBackground.y;
-  if (myGameArea.keys && myGameArea.keys[37] || myGameArea.keys && myGameArea.keys[65]) {myBackground.x += 2.5; myForeground.x += 2.5; myHitDetect.x += 2.5; myGamePiece.image.src ="Llama-Left.png"}
-  if (myGameArea.keys && myGameArea.keys[39] || myGameArea.keys && myGameArea.keys[68]) {myBackground.x -= 2.5; myForeground.x -= 2.5; myHitDetect.x -= 2.5; myGamePiece.image.src ="Llama-Right.png"}
-  if (myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[87]) {myBackground.y += 2.5; myForeground.y += 2.5; myHitDetect.y += 2.5; myGamePiece.image.src ="Llama_Up.png"}
-  if (myGameArea.keys && myGameArea.keys[40] || myGameArea.keys && myGameArea.keys[83]) {myBackground.y -= 2.5; myForeground.y -= 2.5; myHitDetect.y -= 2.5; myGamePiece.image.src ="Llama_Down.png"}
-  myBackground.update();
+  oldx = BG01.x;
+  oldy = BG01.y;
+  if (myGameArea.keys && myGameArea.keys[37] || myGameArea.keys && myGameArea.keys[65]) {MoveBackgrounds("x",-2.5); MoveForegrounds("x",-2.5); MoveHitDetect("x",-2.5);  myGamePiece.image.src ="Llama-Left.png"}
+  if (myGameArea.keys && myGameArea.keys[39] || myGameArea.keys && myGameArea.keys[68]) {MoveBackgrounds("x",2.5); MoveForegrounds("x",2.5); MoveHitDetect("x",2.5); myGamePiece.image.src ="Llama-Right.png"}
+  if (myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[87]) {MoveBackgrounds("y",2.5); MoveForegrounds("y",2.5); MoveHitDetect("y",2.5); myGamePiece.image.src ="Llama_Up.png"}
+  if (myGameArea.keys && myGameArea.keys[40] || myGameArea.keys && myGameArea.keys[83]) {MoveBackgrounds("y",-2.5); MoveForegrounds("y",-2.5); MoveHitDetect("y",-2.5); myGamePiece.image.src ="Llama_Down.png"}
+  updateBackgrounds();
   myGamePiece.update();
-  myForeground.update();
-  myHitDetect.update();
+  updateForegrounds();
+  updateHitDetect();
   let imagedata = ctx2.getImageData(myGamePiece.x, myGamePiece.y, myGamePiece.width, myGamePiece.height).data;
     for(var i=0;i<imagedata.length;i+=4){
             if(
@@ -120,13 +167,14 @@ function updateGameArea() {
                 imagedata[i+1]==255&&
                 imagedata[i+2]==0
             ){
-                myBackground.y = oldy; myForeground.y = oldy; myHitDetect.y = oldy; myBackground.x = oldx; myForeground.x = oldx; myHitDetect.x = oldx;
+                BG01.y = oldy; FG01.y = oldy; HD01.y = oldy; BG01.x = oldx; FG01.x = oldx; HD01.x = oldx;
                 return true;
             }
         }
         return false;
     }
   
+
 
 window.onload = startGame;
 
