@@ -117,37 +117,46 @@ function Scomp(width, height, color, x, y, type) {
 
 function moveBackgrounds(xy,move){
     if (xy == "x"){
-      BG01.x += move;   
+      BG01.x += move;
+      BG02.x += move;
     }else if(xy=="y"){
       BG01.y += move;
+      BG02.y += move;
     }
 }
 
 function moveForegrounds(xy,move){
     if (xy == "x"){
-      FG01.x += move;   
+      FG01.x += move;  
+      FG02.x += move;
     }else if(xy=="y"){
       FG01.y += move;
+      FG02.y += move;
     }
 }
 
 
 function moveHitDetect(xy,move){
     if (xy == "x"){
-      HD01.x += move;   
+      HD01.x += move; 
+      HD02.x += move;
     }else if(xy=="y"){
       HD01.y += move;
+      HD02.y += move;
     }
 }    
 
 function updateBackgrounds(){
  BG01.update();
+ BG02.update();
 }
 function updateForegrounds(){
- FG01.update();   
+ FG01.update();
+ FG02.update();
 }
 function updateHitDetect(){
  HD01.update();
+ HD02.update();
 }
 
 function updateGameArea() {
@@ -170,7 +179,7 @@ function updateGameArea() {
                 imagedata[i+1]==255&&
                 imagedata[i+2]==0
             ){
-                BG01.y = oldy; BG02.y = oldy; FG01.y = oldy; FG02.y = oldy; HD01.y = oldy; HD02.y = oldy; BG01.x = oldx; BG02.x = oldx; FG01.x = oldx; FG02.x = oldx; HD01.x = oldx; HD02.x = oldx;
+                BG01.y = oldy; BG02.y = oldy+540; FG01.y = oldy; FG02.y = oldy+540; HD01.y = oldy; HD02.y = oldy+540; BG01.x = oldx; BG02.x = oldx; FG01.x = oldx; FG02.x = oldx; HD01.x = oldx; HD02.x = oldx;
                 return true;
             }
         }
