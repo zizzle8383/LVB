@@ -20,10 +20,10 @@ function startGame() {
 
 
 function create(){
-  myBackground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"background.png",0,0,"image");
+  myBackground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/background.png",0,0,"image");
   myGamePiece = new component(100, 100, "Llama_Down.png", myGameArea.canvas.width/2, myGameArea.canvas.height/2, "image");
-  myForeground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"foreground.png",0,0,"image");
-  myHitDetect = new Scomp(secondcanvas.canvas.width, secondcanvas.canvas.height,"Hitdet.png",0,0,"image");
+  myForeground = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/foreground.png",0,0,"image");
+  myHitDetect = new Scomp(secondcanvas.canvas.width, secondcanvas.canvas.height,"areas/area1/Hitdet.png",0,0,"image");
 }
 
 var myGameArea = {
