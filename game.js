@@ -152,8 +152,8 @@ function updateGameArea() {
   secondcanvas.clear();
   oldx = BG01.x;
   oldy = BG01.y;
-  if (myGameArea.keys && myGameArea.keys[37] || myGameArea.keys && myGameArea.keys[65]) {moveBackgrounds("x",-2.5); moveForegrounds("x",-2.5); moveHitDetect("x",-2.5);  myGamePiece.image.src ="Llama-Left.png"}
-  if (myGameArea.keys && myGameArea.keys[39] || myGameArea.keys && myGameArea.keys[68]) {moveBackgrounds("x",2.5); moveForegrounds("x",2.5); moveHitDetect("x",2.5); myGamePiece.image.src ="Llama-Right.png"}
+  if (myGameArea.keys && myGameArea.keys[37] || myGameArea.keys && myGameArea.keys[65]) {moveBackgrounds("x",2.5); moveForegrounds("x",2.5); moveHitDetect("x",2.5);  myGamePiece.image.src ="Llama-Left.png"}
+  if (myGameArea.keys && myGameArea.keys[39] || myGameArea.keys && myGameArea.keys[68]) {moveBackgrounds("x",-2.5); moveForegrounds("x",-2.5); moveHitDetect("x",-2.5); myGamePiece.image.src ="Llama-Right.png"}
   if (myGameArea.keys && myGameArea.keys[38] || myGameArea.keys && myGameArea.keys[87]) {moveBackgrounds("y",2.5); moveForegrounds("y",2.5); moveHitDetect("y",2.5); myGamePiece.image.src ="Llama_Up.png"}
   if (myGameArea.keys && myGameArea.keys[40] || myGameArea.keys && myGameArea.keys[83]) {moveBackgrounds("y",-2.5); moveForegrounds("y",-2.5); moveHitDetect("y",-2.5); myGamePiece.image.src ="Llama_Down.png"}
   updateBackgrounds();
