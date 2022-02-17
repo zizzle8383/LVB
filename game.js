@@ -20,14 +20,17 @@ function startGame() {
 
 function createbackgrounds(){
     BG01 = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/background.png",0,0,"image");
+    BG02 = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/background02.png",0,540,"image");
 }
 
 function createforegrounds(){
   FG01 = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/foreground.png",0,0,"image");    
+  FG02 = new component(myGameArea.canvas.width, myGameArea.canvas.height,"areas/area1/foreground02.png",0,540,"image");
 }
 
 function createdetection(){
   HD01 = new Scomp(secondcanvas.canvas.width, secondcanvas.canvas.height,"areas/area1/Hitdet (1).png",0,0,"image");
+  HD02 = new Scomp(secondcanvas.canvas.width, secondcanvas.canvas.height,"areas/area1/Hitdet (2).png",0,540,"image"); 
 }
 
 function create(){
@@ -167,7 +170,7 @@ function updateGameArea() {
                 imagedata[i+1]==255&&
                 imagedata[i+2]==0
             ){
-                BG01.y = oldy; FG01.y = oldy; HD01.y = oldy; BG01.x = oldx; FG01.x = oldx; HD01.x = oldx;
+                BG01.y = oldy; BG02.y = oldy FG01.y = oldy; FG02.y = oldy; HD01.y = oldy; HD02.y = oldy; BG01.x = oldx; BG02.x = oldx; FG01.x = oldx; FG02.x = oldx; HD01.x = oldx; HD02.x = oldx;
                 return true;
             }
         }
