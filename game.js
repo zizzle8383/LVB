@@ -10,7 +10,7 @@ function preloadImage(url) {
 
 // Define objects and their refresh order
 const objects = [
-    { name: 'background', src: 'background.jpg', order: 0 },
+    { name: 'background', src: 'cove_2013.png', order: 0 },
     { name: 'navmesh', src: 'navmesh.png', order: 1 }, // Navmesh image
     { name: 'player', src: 'player.png', order: 2 },
     // Add more objects as needed
